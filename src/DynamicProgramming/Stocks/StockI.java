@@ -1,6 +1,6 @@
 package DynamicProgramming.Stocks;
 
-public class StocksI {
+public class StockI {
     public static int stockI(int[] nums){
         int n = nums.length;;
         Integer[][] dp = new Integer[n][2];
