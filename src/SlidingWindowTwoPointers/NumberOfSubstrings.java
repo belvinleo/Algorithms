@@ -1,6 +1,6 @@
 package SlidingWindowTwoPointers;
 
-public class SubstringWithDistinctCharacters {
+public class NumberOfSubstrings {
     public static int numberOfSubstring(String s){
         int[] count = new int[3];
         int left = 0;

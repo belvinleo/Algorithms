@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LongestSubstringKDistinct {
-    public static int lengthOfTheLongestSubstringWithKDistinctChar(String s, int k){
+    public static int kDistinctChar(String s, int k){
         Map<Character, Integer> map = new HashMap<>();
         int left = 0;
         int maxlen = 0;
@@ -28,7 +28,7 @@ public class LongestSubstringKDistinct {
 
     public static void main(String[] args) {
         String s = "eceba";
-        int ans = lengthOfTheLongestSubstringWithKDistinctChar(s, 2);
+        int ans = kDistinctChar(s, 2);
         System.out.print(ans);
     }
 }

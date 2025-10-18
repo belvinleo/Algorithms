@@ -1,7 +1,6 @@
 package LinkedList.SinglyLinkedList;
 
 public class SinglyLinkedList {
-
     class Node {
         int data;
         Node next;

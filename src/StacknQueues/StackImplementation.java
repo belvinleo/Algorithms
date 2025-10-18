@@ -11,7 +11,7 @@ class StackUsingArrays{
     int[] st = new int[capacity];
 
     void push(int x){
-        if(top == capacity - 1)System.out.print("stack overflow");
+        if(top == capacity - 1) System.out.print("stack overflow");
         top++;
         st[top] = x;
     }
