@@ -68,6 +68,38 @@ public class MediumProblems {
         return result;
     }
 
+    public int atoi(String s){
+        int n = s.length();
+        int i = 0;
+
+        // 1) Skip leading spaces
+        while (i < n && s.charAt(i) == ' ') i++;
+        if (i == n) return 0;
+
+        int sign = 1;
+        char c = s.charAt(i);
+        if (c == '-' || c == '+'){
+            sign = (c == '-') ? -1 : 1;
+            i++;
+        }
+
+        int res = 0;
+        int threshold = Integer.MAX_VALUE / 10;   // 214748364
+        int lastDigitMax = Integer.MAX_VALUE % 10; // 7
+        while (i < n){
+            char ch = s.charAt(i);
+            if (ch < '0' || ch > '9') break;
+            int d = ch - '0';
+
+            if (res > threshold || (res == threshold && d > lastDigitMax)) {
+                return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+            }
+
+            res = res * 10 + d;
+        }
+        return res;
+    }
+
     public static int sumOfBeauty(String s){
         int n = s.length();
         int ans = 0;

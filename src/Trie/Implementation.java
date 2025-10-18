@@ -4,27 +4,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Implementation {
-    class Node{
-        Map<Character, Node> children = new HashMap<>();
-        boolean isEnd = false;
-        int pass = 0;
-        int end = 0;
-    }
+    class TrieNode {
+        TrieNode[] children;
+        boolean isEndOfWord;
 
-    private final Node root = new Node();
-
-    public void insert(String word){
-        if (word == null) return;
-        Node curr = root;
-        curr.pass++;
-        for (int i = 0; i < word.length(); i++){
-            char c = word.charAt(i);
-            curr = curr.children.computeIfAbsent(c, character -> new Node());
-            curr.pass++;
+        public TrieNode(){
+            children = new TrieNode[26];
+            isEndOfWord = false;
         }
-        curr.isEnd = true;
-        curr.end++;
     }
 
+    class Trie {
+        TrieNode root;
+
+        Trie(){
+            root = new TrieNode();
+        }
+
+
+    }
 
 }
